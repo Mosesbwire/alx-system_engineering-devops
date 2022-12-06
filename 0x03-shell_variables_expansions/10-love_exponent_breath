@@ -1,2 +1,2 @@
 #!/bin/bash
-echo "$(($BREATH**$POWER))"
+printf "%d\n" $(($BREATH^$POWER))
