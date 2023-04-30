@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#print phrase n times using until loop. In 9th iteration print phrase then hi
+#on new line
+
+start=1
+
+while [ $start -le 10 ]
+do
+    if [ $start -eq 4 ]
+    then
+        echo "bad luck"
+    elif [ $start -eq 8 ]
+    then
+
+        echo "good luck"
+    else
+        echo "Best School"
+    fi
+    
+    start=$((start + 1))
+done
+    
