@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#use while loop to display text
+
+start=0
+phrase="Best School"
+
+while [ $start -lt 10 ]
+do
+    echo "$phrase"
+    start=$((start + 1))
+done

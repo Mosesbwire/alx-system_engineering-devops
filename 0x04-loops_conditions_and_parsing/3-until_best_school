@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#use until to loop and diplay text
+
+start=1
+phrase="Best School"
+
+until [ $start -eq 10 ]
+do
+    echo "$phrase"
+    start=$((start + 1))
+done
