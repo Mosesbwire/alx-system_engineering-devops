@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+#displays all listening ports
+
+# Get the list of listening sockets
+sockets=$(sudo netstat -tlnp | awk '$6 == "LISTEN" {print $1,$4,$7}')
+
+# Loop through the list of sockets and extract the PID and name of the program
+while read -r socket; do
+    pid=$(echo $socket | awk '{split($3,a,"/"); print a[1]}')
+    pname=$(echo $socket | awk '{split($3,a,"/"); print a[2]}')
+    echo "$socket $pid $pname"
+done <<< "$sockets"
+
