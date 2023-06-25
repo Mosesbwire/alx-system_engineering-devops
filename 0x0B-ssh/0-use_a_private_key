@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+#Script to ssh to a remote server with username ubuntu
+
+ssh -i ~/.ssh/alx ubuntu@54.166.138.10
