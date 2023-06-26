@@ -2,4 +2,4 @@
 
 #Script to ssh to a remote server with username ubuntu
 
-ssh -i ~/.ssh/school ubuntu@54.166.138.10
+ssh ubuntu@54.166.138.10 -i ~/.ssh/school
