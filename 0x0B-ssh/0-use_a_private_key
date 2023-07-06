@@ -1,5 +1,3 @@
 #!/usr/bin/env bash
-
 #Script to ssh to a remote server with username ubuntu
-
 ssh ubuntu@54.166.138.10 -i ~/.ssh/school
