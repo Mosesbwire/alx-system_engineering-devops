@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+#Transfer a file from the host to the server
+
+expectedArgs=3
+actualArgs=$#
+script_name=$(basename "$0")
+path_to_file=$1
+ip=$2
+username=$3
+path_to_rsa=$4
+dest="~/"
+
+if [ $actualArgs -lt $expectedArgs ]; then
+	echo "Usage: $script_name PATH_TO_FILE IP USERNAME PATH_TO_SSH_KEY"
+else
+	scp -o StrictHostKeyChecking=no -i "$path_to_rsa" "$path_to_file" "$username"@"$ip":"$dest"
+fi
