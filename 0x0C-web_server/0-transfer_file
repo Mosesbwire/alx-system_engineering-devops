@@ -1,5 +1,4 @@
 #!/usr/bin/env bash
-
 #Transfer a file from the host to the server
 
 expectedArgs=3
