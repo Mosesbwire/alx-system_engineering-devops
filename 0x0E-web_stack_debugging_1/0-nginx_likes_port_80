@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 #installs and starts an nginx server
 
+# suppress any interactive prompts during installation
+export DEBIAN_FRONTEND=noninteractive
+
 apt-get update -y
+apt-get install -y curl
 apt-get install -y nginx
-systemctl start nginx
+/usr/sbin/nginx
