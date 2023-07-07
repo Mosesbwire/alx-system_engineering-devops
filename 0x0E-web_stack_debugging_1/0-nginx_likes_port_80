@@ -4,8 +4,8 @@
 # suppress any interactive prompts during installation
 export DEBIAN_FRONTEND=noninteractive
 
-apt-get update -y
-apt-get install -y curl
-apt-get install -y nginx
-/usr/sbin/nginx
-curl 0:80
+sudo apt-get update
+sudo apt-get install -y curl
+sudo apt-get install -y nginx
+sudo service nginx start
+
