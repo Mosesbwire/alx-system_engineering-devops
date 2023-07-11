@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+# configures an nginx server adding custom header response
+
+sudo apt-get update
+sudo apt-get install -y nginx
+sudo ufw allow 'Nginx HTTP'
+echo "Hello World!" | sudo tee /var/www/html/index.nginx-debian.html
+sudo touch /etc/nginx/conf.d/custom_header.conf
+echo "add_header X-Served-By $(hostname);" | sudo tee /etc/nginx/conf.d/custom_header.conf
+sudo service nginx start
+sudo service nginx restart
