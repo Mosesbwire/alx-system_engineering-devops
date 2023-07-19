@@ -2,14 +2,14 @@
 #create a mysql dump and compress the file. Backs up db
 
 pwd="$1"
-archive_name=$(date +'%d/%m/%Y')
+archive_name=$(date +'%d-%m-%Y')
 
-echo "$pwd" | mysqldump -u root -p --all-databases > backup.sql
+mysqldump -u root --password="$pwd" --all-databases > backup.sql
 
 mkdir archive
 
-cp backup.sql archive/
+mv backup.sql archive/
 
-tar -czf "$archive_name.tar.gz" archive
+tar -czf "${archive_name}.tar.gz" archive
 
 rm -r archive
