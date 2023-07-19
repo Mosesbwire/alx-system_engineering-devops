@@ -6,10 +6,5 @@ archive_name=$(date +'%d-%m-%Y')
 
 mysqldump -u root --password="$pwd" --all-databases > backup.sql
 
-mkdir archive
+tar -czf "${archive_name}.tar.gz" backup.sql
 
-mv backup.sql archive/
-
-tar -czf "${archive_name}.tar.gz" archive
-
-rm -r archive
