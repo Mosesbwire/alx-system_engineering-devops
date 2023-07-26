@@ -46,13 +46,14 @@ def exportDataInJSON(employees, todos):
     for employee in employees:
         username = employee.get('username')
         userId = employee.get('id')
-        dataObj = {"username": username}
         dataList = []
         for todo in todos:
             if (todo.get('userId') == userId):
-                dataObj["task"] = todo.get('title')
-                dataObj["completed"] = todo.get('completed')
-                dataList.append(dataObj)
+                dataList.append({
+                    "username": username,
+                    "task": todo.get('title'),
+                    "completed": todo.get('completed')
+                    })
 
         fileContent[userId] = dataList
 
