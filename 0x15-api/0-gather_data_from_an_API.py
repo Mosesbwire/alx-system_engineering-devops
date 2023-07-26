@@ -1,7 +1,12 @@
 #!/usr/bin/python3
 
 """
-    module: uses the request http library to make api calls
+    module: 0-gather_data_from_an_API.py
+    Interact with a REST api to get employee data
+    Display employee data
+
+    Usage:
+        python3 0-gather_data_from_an_API.py <employeeId>
 """
 
 import requests
@@ -58,7 +63,7 @@ if __name__ == '__main__':
 
     args = 2
 
-    if (len(sys.argv) == args):
+    if (len(sys.argv) == args and sys.argv[1].isdigit()):
 
         empId = sys.argv[1]
 
@@ -69,4 +74,3 @@ if __name__ == '__main__':
     else:
         print('Error: Expected to receive one argument.')
         print('Usage:\n\t{} <userId>'.format(sys.argv[0]))
-payload = {'userId': sys.argv[1]}
