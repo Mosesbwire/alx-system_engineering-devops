@@ -49,7 +49,7 @@ def exportDataInJSON(employees, todos):
         dataObj = {"username": username}
         dataList = []
         for todo in todos:
-            dataObj["task"] = todo.get('task')
+            dataObj["task"] = todo.get('title')
             dataObj["completed"] = todo.get('completed')
             dataList.append(dataObj)
 
