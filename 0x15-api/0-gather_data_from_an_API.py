@@ -69,3 +69,4 @@ if __name__ == '__main__':
     else:
         print('Error: Expected to receive one argument.')
         print('Usage:\n\t{} <userId>'.format(sys.argv[0]))
+payload = {'userId': sys.argv[1]}
