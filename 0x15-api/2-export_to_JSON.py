@@ -74,9 +74,9 @@ def exportDataInJSON(empData, todoData):
             "task": title,
             "completed": status,
             "username": username
-            })
+        })
 
-    fileContent[userId] = data 
+    fileContent[userId] = data
     with open(jsonFile, 'w') as file:
         json.dump(fileContent, file)
 
@@ -91,7 +91,7 @@ if __name__ == '__main__':
 
         empData = fetchEmployeeData(empId)
         todos = fetchEmployeeTodos(empId)
-        
+
         exportDataInJSON(empData, todos)
     else:
         print('Error: Expected to receive one argument.')
