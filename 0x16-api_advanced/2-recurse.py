@@ -6,6 +6,7 @@
 """
 import requests
 
+
 def recurse(subreddit, hot_list=[], count=0, next_page=None):
     """query reddit api returns list containing titles of all hot articles"""
 
@@ -15,7 +16,7 @@ def recurse(subreddit, hot_list=[], count=0, next_page=None):
     API_URL = "https://www.reddit.com/r/{}/hot/.json".format(subreddit)
     params = {"limit": 50, "next_page": next_page, "count": count}
     res = requests.get(API_URL, headers=headers,
-                            params=params, allow_redirects=False)
+                       params=params, allow_redirects=False)
     if res.status_code != 200:
         return None
     data = res.json().get("data")
