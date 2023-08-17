@@ -1,0 +1,10 @@
+# config file for the flask application AirBnB_clone_v2
+
+server {
+	listen 80;
+	server_name 100.26.226.53;
+	
+	location / {
+		proxy_pass http://127.0.0.1:5000;
+	}
+}
